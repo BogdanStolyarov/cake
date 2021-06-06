@@ -8,7 +8,7 @@ const CATALOG = [{
 		id: 'el2',
 		name: 'Тортик 2',
 		img: 'img/img_store/image102.jpg',
-		price: 23900,
+		price: 90,
 	},
 	{
 		id: 'el3',
