@@ -1,35 +1,32 @@
 class LocalStorageUtil {
-	constructor() {
-		this.keyName = 'catalog';
-	}
+    constructor() {
+        this.keyName = 'products';
+    }
 
-	getCatalog() {
-		const catalogLocalStorage = localStorage.getItem(this.keyName);
-		if (catalogLocalStorage !== null) {
-			return JSON.parse(catalogLocalStorage);
-		}
-		return [];
-	}
+    getProducts() {
+        const productsLocalStorage = localStorage.getItem(this.keyName);
+        if (productsLocalStorage !== null) {
+            return JSON.parse(productsLocalStorage);
+        }
+        return [];
+    }
 
-	putCatalog(id) {
-		let catalog = this.getCatalog();
-		let pushCatalog = false;
-		const index = catalog.indexOf(id);
+    putProducts(id) {
+        let products = this.getProducts();
+        let pushProduct = false;
+        const index = products.indexOf(id);
 
-		if (index === -1) {
-			catalog.push(id);
-			pushCatalog = true;
-		} else {
-			catalog.splice(index, 1);
-		}
+        if (index === -1) {
+            products.push(id);
+            pushProduct = true;
+        } else {
+            products.splice(index, 1);
+        }
 
-		localStorage.setItem(this.keyName, JSON.stringify(catalog));
+        localStorage.setItem(this.keyName, JSON.stringify(products));
 
-		return {
-			pushCatalog,
-			catalog
-		}
-	}
+        return { pushProduct, products }
+    }
 }
 
 const localStorageUtil = new LocalStorageUtil();
