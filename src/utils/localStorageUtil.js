@@ -28,7 +28,7 @@ class LocalStorageUtil {
 		return {
 			pushProduct,
 			products
-		}
+		};
 	}
 }
 
